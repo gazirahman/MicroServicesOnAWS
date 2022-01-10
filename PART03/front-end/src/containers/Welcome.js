@@ -10,7 +10,7 @@ class Welcome extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="Display-1">Castle Rock Photos</h1>
+        <h1 className="Display-1">Intelligent Photos</h1>
         {this.props.message && 
           <Alert variant="success">
             {this.props.message}

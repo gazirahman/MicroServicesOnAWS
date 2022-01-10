@@ -14,7 +14,7 @@ const Confirmation = ({loading, action}) => {
 
   return(
     <>
-      <p className="lead text-muted">Please check your email for the confirmation code that was generated.  If you don't see an email from us, please check your junk folder or contact <a href="mailto:support@castlerock.ai">support@castlerock.ai</a>
+      <p className="lead text-muted">Please check your email for the confirmation code that was generated.  If you don't see an email from us, please check your junk folder or contact <a href="mailto:mushfiq@gazirahman.com">Support</a>
       </p>
       <Confirm 
         action={action}
@@ -34,7 +34,7 @@ class SignUp extends Component {
       <>
         { this.props.isAuthenticated && <Redirect to="/" />}
         <div className="container">
-          <h1 className="Display-1">Castle Rock Photos</h1>
+          <h1 className="Display-1">Intelligent Photos</h1>
           { this.props.error && 
             <Error error={this.props.error} />
           }
