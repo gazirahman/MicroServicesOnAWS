@@ -9,8 +9,8 @@
 # https://www.terraform.io/docs/providers/aws/index.html
 # select the region you want to perform this operation in. 
 provider "aws" {
-  profile = "cr" 
-  region = "us-west-2"
+  profile = "photos" 
+  region = "us-east-1"
 }
 
 resource "aws_dynamodb_table" "dynamoUsers" {

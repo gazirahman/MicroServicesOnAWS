@@ -8,8 +8,8 @@ service: photos
 provider:
   name: aws
   runtime: python3.7
-  profile: cr
-  region: us-west-2
+  profile: photos
+  region: us-east-1
   stage: ${self:custom.currentStage}
   logRetentionInDays: 5
   timeout: 30
@@ -26,8 +26,8 @@ provider:
         - s3:GetObject
         - s3:DeleteObject
       Resource: 
-        - "arn:aws:s3:::crphotoapp/*"
-        - "arn:aws:s3:::crphotoapp-dev/*"
+        - "arn:aws:s3:::gaziphotosapp/*"
+        - "arn:aws:s3:::gaziphotosapp-dev/*"
     - Effect: Allow
       Action:
         - logs:CreateLogGroup
@@ -43,8 +43,8 @@ provider:
         - dynamodb:DeleteItem
         - dynamodb:UpdateItem
       Resource: 
-        - arn:aws:dynamodb:us-west-2:188966951897:table/photoUsers
-        - arn:aws:dynamodb:us-west-2:188966951897:table/devPhotoUsers
+        - arn:aws:dynamodb:us-east-1:089828162809:table/photoUsers
+        - arn:aws:dynamodb:us-east-1:089828162809:table/devPhotoUsers
     - Effect: Allow
       Action:
         - cognito-idp:AdminListGroupsForUser
@@ -64,13 +64,13 @@ package:
 custom:
   defaultStage: dev
   currentStage: ${opt:stage, self:custom.defaultStage}
-  userPoolArn: "arn:aws:cognito-idp:us-west-2:188966951897:userpool/us-west-2_v8zZp3Jvv"
+  userPoolArn: "arn:aws:cognito-idp:us-east-1:089828162809:userpool/us-east-1_WIe3qsWEA"
   dynamo_table:
     prod: "photoUsers"
     dev: "devPhotoUsers"
   s3_bucket: 
-    prod: "crphotoapp"
-    dev: "crphotoapp-dev"
+    prod: "gaziphotosapp"
+    dev: "gaziphotosapp-dev"
   s3_keybase: "private/"
   prune:
     automatic: true
